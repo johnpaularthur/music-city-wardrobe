@@ -1075,6 +1075,14 @@ address { font-style: normal; }
   color: rgba(var(--fg-rgb), 0.3);
 }
 
+.footer__parent {
+  margin-top: 0.6rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(var(--fg-rgb), 0.4);
+}
+
 .footer__nav {
   display: flex;
   gap: var(--space-md);
