@@ -1,5 +1,5 @@
 /* ============================================================
-   NASHVILLE WARDROBE SERVICES — script.js
+   MUSIC CITY WARDROBE — script.js
    ============================================================ */
 
 (function () {
@@ -175,7 +175,7 @@
     var msg = document.createElement('p');
     msg.className   = 'form-error-msg form-disclaimer';
     msg.style.color = '#C9A96E';
-    msg.textContent = 'Something went wrong. Please email us directly at bookings@nashvillewardrobeservices.com';
+    msg.textContent = 'Something went wrong. Please email us directly at bookings@musiccitywardrobe.com';
     form.appendChild(msg);
   }
 
