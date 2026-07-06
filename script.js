@@ -174,10 +174,33 @@
     if (existing) return;
     var msg = document.createElement('p');
     msg.className   = 'form-error-msg form-disclaimer';
-    msg.style.color = '#C9A96E';
+    msg.style.color = getComputedStyle(document.documentElement).getPropertyValue('--color-gold').trim() || '#C9A96E';
     msg.textContent = 'Something went wrong. Please email us directly at bookings@musiccitywardrobe.com';
     form.appendChild(msg);
   }
+
+
+  /* ── Theme switcher ──────────────────────────────────────── */
+  var THEME_KEY = 'mcw-theme';
+  var themeButtons = document.querySelectorAll('.theme-btn');
+
+  function applyTheme(name) {
+    document.documentElement.setAttribute('data-theme', name);
+    themeButtons.forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-theme-set') === name);
+    });
+    try { localStorage.setItem(THEME_KEY, name); } catch (e) {}
+  }
+
+  var savedTheme = 'gold';
+  try { savedTheme = localStorage.getItem(THEME_KEY) || 'gold'; } catch (e) {}
+  applyTheme(savedTheme);
+
+  themeButtons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      applyTheme(b.getAttribute('data-theme-set'));
+    });
+  });
 
 
   /* ── Footer: dynamic year ────────────────────────────────── */
