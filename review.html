@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nashville Wardrobe Services — Website Content Review</title>
+  <style>
+    /* ── Base ─────────────────────────────────────────── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 11pt;
+      color: #111;
+      background: #fff;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    /* ── Cover Page ───────────────────────────────────── */
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2in 1in;
+      border-bottom: 3px solid #111;
+      page-break-after: always;
+    }
+
+    .cover__label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 8pt;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .cover__title {
+      font-size: 28pt;
+      font-weight: normal;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .cover__subtitle {
+      font-size: 13pt;
+      color: #444;
+      font-style: italic;
+      margin-bottom: 3rem;
+    }
+
+    .cover__meta {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 9pt;
+      color: #888;
+      line-height: 2;
+    }
+
+    .cover__instructions {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      border: 1px solid #ccc;
+      max-width: 5in;
+    }
+
+    .cover__instructions h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 8pt;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      color: #444;
+    }
+
+    .cover__instructions ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+      font-size: 10pt;
+      color: #444;
+      line-height: 2;
+    }
+
+    /* ── Page Layout ──────────────────────────────────── */
+    .page {
+      padding: 0.75in 1in;
+      max-width: 8.5in;
+      margin: 0 auto;
+    }
+
+    /* ── Section Block ────────────────────────────────── */
+    .section-block {
+      page-break-inside: avoid;
+      margin-bottom: 0.5in;
+      padding-bottom: 0.4in;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .section-block:last-child {
+      border-bottom: none;
+    }
+
+    /* Force page break before major sections */
+    .section-block--break {
+      page-break-before: always;
+    }
+
+    /* ── Section Header ───────────────────────────────── */
+    .section-tag {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 7pt;
+      font-weight: bold;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #999;
+      display: block;
+      margin-bottom: 0.15in;
+      padding-bottom: 4pt;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .section-heading {
+      font-size: 16pt;
+      font-weight: normal;
+      margin-bottom: 0.2in;
+      color: #111;
+    }
+
+    /* ── Content Items ────────────────────────────────── */
+    .content-row {
+      display: flex;
+      gap: 0.25in;
+      margin-bottom: 0.15in;
+      align-items: baseline;
+    }
+
+    .content-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 7.5pt;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+      min-width: 1.1in;
+      flex-shrink: 0;
+      padding-top: 1pt;
+    }
+
+    .content-value {
+      font-size: 11pt;
+      color: #111;
+      flex: 1;
+    }
+
+    .content-value--italic {
+      font-style: italic;
+    }
+
+    .content-value--large {
+      font-size: 14pt;
+      line-height: 1.3;
+    }
+
+    .content-value--small {
+      font-size: 9.5pt;
+      color: #333;
+    }
+
+    /* ── Card Group (Collections, Steps, Testimonials) ── */
+    .card-group {
+      margin-top: 0.1in;
+    }
+
+    .card-item {
+      page-break-inside: avoid;
+      margin-bottom: 0.2in;
+      padding: 0.15in 0.2in;
+      border: 1px solid #e0e0e0;
+      background: #fafafa;
+    }
+
+    .card-item__header {
+      display: flex;
+      gap: 0.15in;
+      align-items: baseline;
+      margin-bottom: 0.1in;
+    }
+
+    .card-item__tag {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 7pt;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #999;
+    }
+
+    .card-item__title {
+      font-size: 12pt;
+      font-weight: bold;
+      color: #111;
+    }
+
+    .card-item__body {
+      font-size: 10pt;
+      color: #444;
+      line-height: 1.65;
+    }
+
+    /* ── Stat Row ─────────────────────────────────────── */
+    .stat-row {
+      display: flex;
+      gap: 0.3in;
+      margin: 0.15in 0;
+      padding: 0.15in 0;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+
+    .stat-item__num {
+      font-size: 18pt;
+      font-weight: normal;
+      color: #111;
+      display: block;
+      line-height: 1;
+    }
+
+    .stat-item__label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 7.5pt;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+      display: block;
+      margin-top: 2pt;
+    }
+
+    /* ── Form Field List ──────────────────────────────── */
+    .field-list {
+      columns: 2;
+      column-gap: 0.25in;
+      margin: 0.1in 0;
+    }
+
+    .field-item {
+      font-size: 10pt;
+      color: #333;
+      padding: 3pt 0;
+      break-inside: avoid;
+      display: flex;
+      align-items: center;
+      gap: 0.1in;
+    }
+
+    .field-item::before {
+      content: '□';
+      font-size: 9pt;
+      color: #bbb;
+      flex-shrink: 0;
+    }
+
+    /* ── Notes Area ───────────────────────────────────── */
+    .notes-area {
+      margin-top: 0.2in;
+    }
+
+    .notes-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 7.5pt;
+      font-weight: bold;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #aaa;
+      display: block;
+      margin-bottom: 0.1in;
+    }
+
+    .notes-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .notes-line {
+      height: 0.32in;
+      border-bottom: 1px solid #d0d0d0;
+      width: 100%;
+    }
+
+    /* ── Separator ────────────────────────────────────── */
+    .divider {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 0.25in 0;
+    }
+
+    /* ── Nav Item List ────────────────────────────────── */
+    .inline-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.1in 0.3in;
+      margin: 0.05in 0;
+    }
+
+    .inline-list__item {
+      font-size: 10pt;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 0.08in;
+    }
+
+    .inline-list__item::before {
+      content: '·';
+      color: #bbb;
+    }
+
+    /* ── Print Overrides ──────────────────────────────── */
+    @page {
+      size: letter;
+      margin: 0;
+    }
+
+    @media print {
+      body { font-size: 10.5pt; }
+      .cover { padding: 1.5in 1in; }
+      .page  { padding: 0.6in 0.85in; }
+      .notes-line { height: 0.29in; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       COVER PAGE
+  ══════════════════════════════════════ -->
+  <div class="cover">
+    <span class="cover__label">Website Content Review</span>
+    <h1 class="cover__title">Nashville Wardrobe Services</h1>
+    <p class="cover__subtitle">One-Page Website — Draft Copy &amp; Structure</p>
+    <div class="cover__meta">
+      <div>Prepared: April 2026</div>
+      <div>File: index.html &nbsp;/&nbsp; nashvillewardrobeservices.com</div>
+      <div>Version: 1.0 — Initial Draft</div>
+    </div>
+
+    <div class="cover__instructions">
+      <h3>How to Use This Document</h3>
+      <ul>
+        <li>Review each section and its copy on the pages that follow</li>
+        <li>Use the <strong>Notes</strong> lines to write changes, corrections, or ideas</li>
+        <li>Mark content you want to <strong>keep</strong>, <strong>change</strong>, or <strong>remove</strong></li>
+        <li>Note any real photography, names, or details to replace placeholders</li>
+        <li>Return with your notes to discuss revisions</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════
+       MAIN CONTENT
+  ══════════════════════════════════════ -->
+  <div class="page">
+
+    <!-- TABLE OF CONTENTS -->
+    <div class="section-block">
+      <span class="section-tag">Contents</span>
+      <h2 class="section-heading">Sections on This Website</h2>
+      <div class="inline-list">
+        <span class="inline-list__item">1 &nbsp; Navigation Bar</span>
+        <span class="inline-list__item">2 &nbsp; Hero (Landing)</span>
+        <span class="inline-list__item">3 &nbsp; About</span>
+        <span class="inline-list__item">4 &nbsp; Collections</span>
+        <span class="inline-list__item">5 &nbsp; How It Works</span>
+        <span class="inline-list__item">6 &nbsp; Clients &amp; Testimonials</span>
+        <span class="inline-list__item">7 &nbsp; Contact &amp; Booking Form</span>
+        <span class="inline-list__item">8 &nbsp; Footer</span>
+      </div>
+    </div>
+
+
+    <!-- ─── SECTION 1: NAVIGATION ──────────────────── -->
+    <div class="section-block">
+      <span class="section-tag">Section 1 — Navigation Bar</span>
+      <h2 class="section-heading">Navigation</h2>
+      <p style="font-size:9.5pt; color:#666; margin-bottom:0.15in;">Fixed bar at the top of every page. Transparent over the hero, then darkens as the visitor scrolls down.</p>
+
+      <div class="content-row">
+        <span class="content-label">Logo / Name</span>
+        <span class="content-value">Nashville Wardrobe</span>
+      </div>
+      <div class="content-row">
+        <span class="content-label">Sub-text</span>
+        <span class="content-value content-value--small">Services · Est. Nashville, Tennessee</span>
+      </div>
+
+      <hr class="divider">
+
+      <div class="content-row">
+        <span class="content-label">Menu Links</span>
+        <div class="content-value">
+          <div class="inline-list">
+            <span class="inline-list__item">About</span>
+            <span class="inline-list__item">Collections</span>
+            <span class="inline-list__item">Process</span>
+            <span class="inline-list__item">Clients</span>
+            <span class="inline-list__item"><strong>Book Now</strong> (button)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes-area">
+        <span class="notes-label">Notes &amp; Changes</span>
+        <div class="notes-lines">
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ─── SECTION 2: HERO ─────────────────────────── -->
+    <div class="section-block">
+      <span class="section-tag">Section 2 — Hero (First Thing Visitors See)</span>
+      <h2 class="section-heading">Hero</h2>
+      <p style="font-size:9.5pt; color:#666; margin-bottom:0.15in;">Full-screen opening section. Dark atmospheric background. Will be replaced with a real photograph when available.</p>
+
+      <div class="content-row">
+        <span class="content-label">Overline</span>
+        <span class="content-value content-value--small">Wardrobe for the Entertainment Industry</span>
+      </div>
+      <div class="content-row">
+        <span class="content-label">Headline</span>
+        <span class="content-value content-value--large"><em>Every era. Every vision.</em></span>
+      </div>
+      <div class="content-row">
+        <span class="content-label">Sub-text</span>
+        <span class="content-value content-value--small">Vintage, designer, contemporary, and western wear rental for film, television, music, and red carpet. Nashville, Tennessee.</span>
+      </div>
+      <div class="content-row">
+        <span class="content-label">Button</span>
+        <span class="content-value content-value--small">Book a Consultation → links to Contact section</span>
+      </div>
+
+      <div class="notes-area">
+        <span class="notes-label">Notes &amp; Changes</span>
+        <div class="notes-lines">
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ─── SECTION 3: ABOUT ─────────────────────────── -->
+    <div class="section-block section-block--break">
+      <span class="section-tag">Section 3 — About</span>
+      <h2 class="section-heading">About</h2>
+      <p style="font-size:9.5pt; color:#666; margin-bottom:0.15in;">Two-column layout — image placeholder on the left, text on the right. Gold corner ornaments frame the image.</p>
+
+      <div class="content-row">
+        <span class="content-label">Overline</span>
+        <span class="content-value content-value--small">Est. 1998</span>
+      </div>
+      <div class="content-row">
+        <span class="content-label">Heading</span>
+        <span class="content-value content-value--large"><em>The right piece. For any era, any story.</em></span>
+      </div>
+
+      <hr class="divider">
+
+      <div class="content-row">
+        <span class="content-label">Paragraph 1</span>
+        <span class="content-value content-value--small">Nashville Wardrobe Services has dressed the entertainment industry's most recognized productions for over two decades. Our archive spans vintage garments from the 1920s through the 1990s, contemporary and nondescript wardrobe, acclaimed designer and couture labels, and an unrivaled specialty collection of western wear.</span>
+      </div>
+
+      <div class="content-row" style="margin-top:0.1in;">
+        <span class="content-label">Paragraph 2</span>
+        <span class="content-value content-value--small">We work exclusively with production companies, music studios, celebrity stylists, and editorial teams — providing not just garments, but the curatorial depth that makes a wardrobe truly unforgettable.</span>
+      </div>
+
+      <hr class="divider">
+
+      <div class="content-row">
+        <span class="content-label">Stats Bar</span>
+        <div class="content-value">
+          <div class="stat-row">
+            <div>
+              <span class="stat-item__num">2,400+</span>
+              <span class="stat-item__label">Archive Pieces</span>
+            </div>
+            <div>
+              <span class="stat-item__num">26</span>
+              <span class="stat-item__label">Years Serving the Industry</span>
+            </div>
+            <div>
+              <span class="stat-item__num">400+</span>
+              <span class="stat-item__label">Productions Dressed</span>
+            </div>
+          </div>
+          <p style="font-size:8.5pt; color:#999; font-style:italic;">Are these numbers accurate? Please verify or provide correct figures.</p>
+        </div>
+      </div>
+
+      <div class="content-row">
+        <span class="content-label">Button</span>
+        <span class="content-value content-value--small">Start a Conversation → links to Contact section</span>
+      </div>
+
+      <div class="notes-area">
+        <span class="notes-label">Notes &amp; Changes</span>
+        <div class="notes-lines">
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ─── SECTION 4: COLLECTIONS ──────────────────── -->
+    <div class="section-block section-block--break">
+      <span class="section-tag">Section 4 — Collections</span>
+      <h2 class="section-heading">Collections</h2>
+      <p style="font-size:9.5pt; color:#666; margin-bottom:0.15in;">Four cards in a 2×2 grid. Each card has a placeholder image background. Text slides up on hover. Image placeholders to be replaced with real photography.</p>
+
+      <div class="card-group">
+
+        <div class="card-item">
+          <div class="card-item__header">
+            <span class="card-item__tag">Card 1 &nbsp;·&nbsp; Overline: 1920s – 1990s</span>
+          </div>
+          <div class="card-item__title" style="margin-bottom:4pt;">Vintage</div>
+          <div class="card-item__body">Authentic period garments spanning eight decades. Carefully sourced, preserved, and camera-ready — from Jazz Age elegance to nineties street.</div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-item__header">
+            <span class="card-item__tag">Card 2 &nbsp;·&nbsp; Overline: Luxury Labels</span>
+          </div>
+          <div class="card-item__title" style="margin-bottom:4pt;">Designer &amp; Couture</div>
+          <div class="card-item__body">High fashion and couture pieces from acclaimed labels — for red carpet, editorial, and productions that demand the finest.</div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-item__header">
+            <span class="card-item__tag">Card 3 &nbsp;·&nbsp; Overline: Everyday &amp; Character</span>
+          </div>
+          <div class="card-item__title" style="margin-bottom:4pt;">Contemporary</div>
+          <div class="card-item__body">Modern, nondescript wardrobe for background, day players, and leads. Broad sizing, neutral palettes, and camera-tested textures.</div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-item__header">
+            <span class="card-item__tag">Card 4 &nbsp;·&nbsp; Overline: Specialty</span>
+          </div>
+          <div class="card-item__title" style="margin-bottom:4pt;">Western Wear</div>
+          <div class="card-item__body">Our signature specialty. Rhinestone suits, fringe leather, embroidered stage pieces, and couture western — unmatched depth and authenticity.</div>
+        </div>
+
+      </div>
+
+      <div class="notes-area">
+        <span class="notes-label">Notes &amp; Changes</span>
+        <div class="notes-lines">
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ─── SECTION 5: HOW IT WORKS ─────────────────── -->
+    <div class="section-block section-block--break">
+      <span class="section-tag">Section 5 — How It Works</span>
+      <h2 class="section-heading">How It Works</h2>
+      <p style="font-size:9.5pt; color:#666; margin-bottom:0.15in;">Three steps displayed side by side with gold connecting lines. Small icons above each step title.</p>
+
+      <div class="card-group">
+
+        <div class="card-item">
+          <div class="card-item__header">
+            <span class="card-item__tag">Step 1</span>
+          </div>
+          <div class="card-item__title" style="margin-bottom:4pt;">Consult</div>
+          <div class="card-item__body">Connect with our wardrobe specialists. Share your project brief, references, and timeline. We'll pull from over 2,400 pieces spanning vintage, designer, contemporary, and western wear.</div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-item__header">
+            <span class="card-item__tag">Step 2</span>
+          </div>
+          <div class="card-item__title" style="margin-bottom:4pt;">Select</div>
+          <div class="card-item__body">Browse curated options prepared to your exact spec. In-person or virtual fitting sessions available. Expert alterations and steaming are always included.</div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-item__header">
+            <span class="card-item__tag">Step 3</span>
+          </div>
+          <div class="card-item__title" style="margin-bottom:4pt;">Deliver</div>
+          <div class="card-item__body">White-glove delivery to set, studio, or tour venue. A dedicated account specialist remains your single point of contact through production wrap and return.</div>
+        </div>
+
+      </div>
+
+      <div class="notes-area">
+        <span class="notes-label">Notes &amp; Changes</span>
+        <div class="notes-lines">
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ─── SECTION 6: CLIENTS / TESTIMONIALS ──────── -->
+    <div class="section-block section-block--break">
+      <span class="section-tag">Section 6 — Clients &amp; Testimonials</span>
+      <h2 class="section-heading">Clients &amp; Testimonials</h2>
+      <p style="font-size:9.5pt; color:#666; margin-bottom:0.15in;">A strip of client names (muted, all-caps) followed by three testimonial cards side by side. All names and quotes are placeholders — please provide real clients and quotes, or confirm these can be used.</p>
+
+      <div class="content-row">
+        <span class="content-label">Section Heading</span>
+        <span class="content-value content-value--large"><em>The industry's finest.</em></span>
+      </div>
+
+      <hr class="divider">
+
+      <div class="content-row">
+        <span class="content-label">Client Names</span>
+        <div class="content-value content-value--small">
+          Paramount Pictures &nbsp;·&nbsp; Sony Music Nashville &nbsp;·&nbsp; Universal Television &nbsp;·&nbsp;
+          Republic Records &nbsp;·&nbsp; Warner Bros. Film &nbsp;·&nbsp; Creative Artists Agency &nbsp;·&nbsp; HBO Productions
+          <br><br>
+          <em style="color:#999;">⚠ Placeholder names — replace with actual clients or remove.</em>
+        </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="card-group">
+
+        <div class="card-item">
+          <div class="card-item__header">
+            <span class="card-item__tag">Testimonial 1</span>
+          </div>
+          <div class="card-item__body">
+            <p style="font-style:italic; margin-bottom:0.1in;">"The archive is unlike anything I've encountered in 20 years of costume design. We pulled pieces for three completely different scenes in a single afternoon — each one perfect. The depth of knowledge on this team is what truly sets them apart."</p>
+            <p><strong>J. Whitfield</strong> — Costume Designer, Feature Film</p>
+          </div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-item__header">
+            <span class="card-item__tag">Testimonial 2</span>
+          </div>
+          <div class="card-item__body">
+            <p style="font-style:italic; margin-bottom:0.1in;">"For the headline tour we needed 18 looks that could withstand stadium lighting and two-hour performances, night after night. Nashville Wardrobe delivered on every count — and everything fit like it was built custom."</p>
+            <p><strong>M. Castillo</strong> — Tour Creative Director</p>
+          </div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-item__header">
+            <span class="card-item__tag">Testimonial 3</span>
+          </div>
+          <div class="card-item__body">
+            <p style="font-style:italic; margin-bottom:0.1in;">"We've worked with wardrobe houses on three continents. No one else matches this depth — vintage, designer, contemporary, and western under one roof. For any production, it is the only call I make."</p>
+            <p><strong>S. Nakamura</strong> — Celebrity Stylist</p>
+          </div>
+        </div>
+
+      </div>
+
+      <p style="font-size:8.5pt; color:#999; font-style:italic; margin-top:0.1in;">⚠ All testimonials are placeholder copy. Please provide real quotes from actual clients.</p>
+
+      <div class="notes-area">
+        <span class="notes-label">Notes &amp; Changes</span>
+        <div class="notes-lines">
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ─── SECTION 7: CONTACT ──────────────────────── -->
+    <div class="section-block section-block--break">
+      <span class="section-tag">Section 7 — Contact &amp; Booking Form</span>
+      <h2 class="section-heading">Contact</h2>
+      <p style="font-size:9.5pt; color:#666; margin-bottom:0.15in;">Two-column layout — introductory text on the left, the booking inquiry form on the right.</p>
+
+      <div class="content-row">
+        <span class="content-label">Overline</span>
+        <span class="content-value content-value--small">Work With Us</span>
+      </div>
+      <div class="content-row">
+        <span class="content-label">Heading</span>
+        <span class="content-value content-value--large"><em>Begin your consultation.</em></span>
+      </div>
+      <div class="content-row">
+        <span class="content-label">Body Text</span>
+        <span class="content-value content-value--small">We work with a select number of productions each season to ensure every client receives the full attention of our team. Reach out early — availability fills quickly during awards season.</span>
+      </div>
+
+      <hr class="divider">
+
+      <div class="content-row">
+        <span class="content-label">Address</span>
+        <div class="content-value content-value--small">
+          Nashville, Tennessee<br>
+          bookings@nashvillewardrobeservices.com<br>
+          By appointment only
+        </div>
+      </div>
+
+      <p style="font-size:8.5pt; color:#999; font-style:italic; margin: 0.1in 0;">⚠ Please confirm the correct contact email address.</p>
+
+      <hr class="divider">
+
+      <div class="content-row">
+        <span class="content-label">Form Fields</span>
+        <div class="content-value">
+          <div class="field-list">
+            <div class="field-item">Full Name</div>
+            <div class="field-item">Production / Company</div>
+            <div class="field-item">Project Type (dropdown)</div>
+            <div class="field-item">Date Needed</div>
+            <div class="field-item" style="column-span: all;">Project Brief (text area)</div>
+          </div>
+          <div style="margin-top:0.1in;">
+            <p style="font-size:9pt; color:#555; margin-bottom:4pt;"><strong>Project Type dropdown options:</strong></p>
+            <div class="inline-list" style="font-size:9pt;">
+              <span class="inline-list__item">Film &amp; Television</span>
+              <span class="inline-list__item">Music Video</span>
+              <span class="inline-list__item">Concert Tour</span>
+              <span class="inline-list__item">Editorial / Print</span>
+              <span class="inline-list__item">Red Carpet / Events</span>
+              <span class="inline-list__item">Other</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-row" style="margin-top:0.1in;">
+        <span class="content-label">Submit Button</span>
+        <span class="content-value content-value--small">Send Inquiry</span>
+      </div>
+      <div class="content-row">
+        <span class="content-label">Disclaimer</span>
+        <span class="content-value content-value--small">We respond to all inquiries within 24 hours.</span>
+      </div>
+
+      <div class="notes-area">
+        <span class="notes-label">Notes &amp; Changes</span>
+        <div class="notes-lines">
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ─── SECTION 8: FOOTER ───────────────────────── -->
+    <div class="section-block">
+      <span class="section-tag">Section 8 — Footer</span>
+      <h2 class="section-heading">Footer</h2>
+
+      <div class="content-row">
+        <span class="content-label">Brand Name</span>
+        <span class="content-value">Nashville Wardrobe Services</span>
+      </div>
+      <div class="content-row">
+        <span class="content-label">Tagline</span>
+        <span class="content-value content-value--small"><em>Vintage, designer, and western wear for the world's finest productions.</em></span>
+      </div>
+      <div class="content-row">
+        <span class="content-label">Nav Links</span>
+        <div class="content-value">
+          <div class="inline-list" style="font-size:10pt;">
+            <span class="inline-list__item">About</span>
+            <span class="inline-list__item">Collections</span>
+            <span class="inline-list__item">Process</span>
+            <span class="inline-list__item">Clients</span>
+            <span class="inline-list__item">Book</span>
+          </div>
+        </div>
+      </div>
+      <div class="content-row">
+        <span class="content-label">Social Icons</span>
+        <span class="content-value content-value--small">Instagram · Pinterest · Email — links currently point to # (placeholder). Please provide social media URLs.</span>
+      </div>
+      <div class="content-row">
+        <span class="content-label">Copyright</span>
+        <span class="content-value content-value--small">© 2026 Nashville Wardrobe Services. All rights reserved.</span>
+      </div>
+      <div class="content-row">
+        <span class="content-label">Location</span>
+        <span class="content-value content-value--small">Nashville, Tennessee</span>
+      </div>
+
+      <div class="notes-area">
+        <span class="notes-label">Notes &amp; Changes</span>
+        <div class="notes-lines">
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+          <div class="notes-line"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ─── GENERAL NOTES PAGE ─────────────────────── -->
+    <div class="section-block section-block--break">
+      <span class="section-tag">General Notes</span>
+      <h2 class="section-heading">Additional Notes &amp; Overall Feedback</h2>
+      <p style="font-size:9.5pt; color:#666; margin-bottom:0.2in;">Use this space for anything that doesn't fit in a specific section — overall tone, things to add, things to remove, photography ideas, etc.</p>
+      <div class="notes-lines">
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+        <div class="notes-line"></div>
+      </div>
+    </div>
+
+
+    <!-- ─── PLACEHOLDER CHECKLIST ─────────────────── -->
+    <div class="section-block">
+      <span class="section-tag">Action Items — Placeholders to Replace</span>
+      <h2 class="section-heading">What Still Needs Real Content</h2>
+      <p style="font-size:9.5pt; color:#666; margin-bottom:0.15in;">Check off each item as it's confirmed or provided.</p>
+
+      <div class="card-item">
+        <div class="field-list" style="columns:1; font-size:10.5pt; line-height:1;">
+          <div class="field-item" style="height:0.35in; border-bottom:1px solid #eee; align-items:center;">Photography — Hero background image</div>
+          <div class="field-item" style="height:0.35in; border-bottom:1px solid #eee; align-items:center;">Photography — About section portrait/garment image</div>
+          <div class="field-item" style="height:0.35in; border-bottom:1px solid #eee; align-items:center;">Photography — 4 collection card images (Vintage, Designer, Contemporary, Western)</div>
+          <div class="field-item" style="height:0.35in; border-bottom:1px solid #eee; align-items:center;">Stats — Archive piece count, years in business, productions dressed</div>
+          <div class="field-item" style="height:0.35in; border-bottom:1px solid #eee; align-items:center;">Testimonials — 3 real quotes with real names and roles</div>
+          <div class="field-item" style="height:0.35in; border-bottom:1px solid #eee; align-items:center;">Client names — Real production companies / studios to display in logo strip</div>
+          <div class="field-item" style="height:0.35in; border-bottom:1px solid #eee; align-items:center;">Email address — Confirmed booking/contact email</div>
+          <div class="field-item" style="height:0.35in; border-bottom:1px solid #eee; align-items:center;">Formspree form ID — To make the contact form send emails</div>
+          <div class="field-item" style="height:0.35in; border-bottom:1px solid #eee; align-items:center;">Social media links — Instagram, Pinterest, or other accounts</div>
+          <div class="field-item" style="height:0.35in; border-bottom:1px solid #eee; align-items:center;">Founded year — Correct "Est." year</div>
+          <div class="field-item" style="height:0.35in; align-items:center;">Phone number — Add to contact section if desired</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div><!-- /page -->
+
+</body>
+</html>
