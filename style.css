@@ -592,10 +592,7 @@ address { font-style: normal; }
 }
 
 .collection-card__img--redcarpet {
-  background:
-    radial-gradient(ellipse at 65% 75%, var(--ph-1) 0%, transparent 55%),
-    radial-gradient(ellipse at 20% 25%, var(--ph-2) 0%, transparent 50%),
-    linear-gradient(150deg, var(--ph-base-b) 0%, var(--ph-base-a) 100%);
+  background: url('images/western-wear.jpg') center / cover no-repeat;
 }
 
 .collection-card__body {

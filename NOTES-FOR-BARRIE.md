@@ -3,7 +3,7 @@
 A running record of decisions made on the website, kept separate from the
 content review (`review.html`). Bring this to Barrie for review and sign-off.
 
-_Last updated: 2026-07-06_
+_Last updated: 2026-07-07_
 
 ---
 
@@ -38,6 +38,10 @@ _Last updated: 2026-07-06_
    - Footer: a subtle "A division of Fables by Barrie" line.
 5. Set up a **git repository** and pushed to a **private** GitHub repo
    (`johnpaularthur/music-city-wardrobe`) so all changes are version-tracked.
+6. **Disabled the brand-theme selector** and locked the site to the original
+   "House Gold" look (client preference).
+7. **Added real photos** to the Contemporary and Western Wear collection cards
+   (the other cards still use placeholders).
 
 ---
 
@@ -59,6 +63,11 @@ _Last updated: 2026-07-06_
       longevity claims are accurate for Fables by Barrie.
 - [ ] **Location.** Confirm "Nashville, Tennessee" is the correct public
       address to display.
+- [ ] **Photo usage / model releases.** The Contemporary and Western Wear
+      collection cards now use photos of real, identifiable people. Confirm we
+      have the right to use each image publicly — a signed model release (or
+      photographer/licensing permission) for every person and photo before the
+      site goes live.
 - [ ] **Parent-brand logo (optional).** If a Fables by Barrie logo asset exists,
       consider showing it in the footer to reinforce the connection visually.
 
