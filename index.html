@@ -28,7 +28,7 @@
         <li><a href="#about"       class="nav-link">About</a></li>
         <li><a href="#collections" class="nav-link">Collections</a></li>
         <li><a href="#process"     class="nav-link">Process</a></li>
-        <li><a href="#clients"     class="nav-link">Clients</a></li>
+        <li><a href="#who-we-serve" class="nav-link">Who We Serve</a></li>
         <li><a href="#contact"     class="nav-link nav-link--cta">Book Now</a></li>
       </ul>
 
@@ -44,7 +44,7 @@
         <li><a href="#about"       class="nav-mobile__link">About</a></li>
         <li><a href="#collections" class="nav-mobile__link">Collections</a></li>
         <li><a href="#process"     class="nav-mobile__link">Process</a></li>
-        <li><a href="#clients"     class="nav-mobile__link">Clients</a></li>
+        <li><a href="#who-we-serve" class="nav-mobile__link">Who We Serve</a></li>
         <li><a href="#contact"     class="nav-mobile__link">Book a Consultation</a></li>
       </ul>
     </div>
@@ -101,8 +101,7 @@
       </div>
 
       <div class="about__text">
-        <p class="overline reveal">Est. 1998</p>
-        <div class="about__accent-line reveal"></div>
+        
         <h2 class="display-heading about__heading reveal">
           The right piece.<br>For any era, any story.
         </h2>
@@ -298,6 +297,9 @@
   <!-- ══════════════════════════════════════════
        CLIENTS / TESTIMONIALS
   ══════════════════════════════════════════ -->
+<!-- PARKED: real testimonials + client roster needed before this can go live.
+       Replaced by the "Who We Serve" section below. Restore when real reviews/clients exist.
+
   <section id="clients" class="section section--dark">
     <div class="container">
       <div class="clients__header">
@@ -308,7 +310,7 @@
         <hr class="gold-divider reveal" aria-hidden="true">
       </div>
 
-<!--       <div class="clients__logos reveal">
+      <div class="clients__logos reveal">
         <span class="clients__logo-item">Sony Music Nashville</span>
         <span class="clients__logo-item">Universal Music Group</span>
         <span class="clients__logo-item">MCA Records</span>
@@ -317,7 +319,7 @@
         <span class="clients__logo-item">NBC Universal</span>
         <span class="clients__logo-item">RCA Records</span>
         <span class="clients__logo-item">Apple TV</span>
-      </div> -->
+      </div>
 
       <div class="testimonials__grid">
 
@@ -364,6 +366,67 @@
       </div>
     </div>
   </section>
+-->
+
+
+  <!-- ══════════════════════════════════════════
+       WHO WE SERVE
+  ══════════════════════════════════════════ -->
+  <section id="who-we-serve" class="section section--dark">
+    <div class="container">
+      <div class="audience__header">
+        <p class="overline reveal">Who We Serve</p>
+        <h2 class="display-heading audience__heading reveal">Built for the production.</h2>
+        <hr class="gold-divider reveal" aria-hidden="true">
+        <p class="audience__lead reveal">
+          Music City Wardrobe is a trade resource. We partner with the teams and professionals
+          who dress music, stage, television, and film — sourcing wardrobe by the production,
+          not the piece.
+        </p>
+      </div>
+
+      <div class="audience__grid">
+
+        <div class="audience__item reveal" data-index="0">
+          <h3 class="audience__name">Production Houses &amp; Studios</h3>
+          <p class="audience__desc">
+            Film, television, music, and stage productions sourcing wardrobe at scale —
+            from a single scene to a full season.
+          </p>
+        </div>
+
+        <div class="audience__item reveal" data-index="1">
+          <h3 class="audience__name">Stylists</h3>
+          <p class="audience__desc">
+            Celebrity, tour, and editorial stylists building looks for stage, press,
+            red carpet, and camera.
+          </p>
+        </div>
+
+        <div class="audience__item reveal" data-index="2">
+          <h3 class="audience__name">Custom &amp; Costume Designers</h3>
+          <p class="audience__desc">
+            Designers pulling reference, foundation pieces, and finished garments to
+            realize a character or an era.
+          </p>
+        </div>
+
+        <div class="audience__item reveal" data-index="3">
+          <h3 class="audience__name">Wardrobe Supervisors</h3>
+          <p class="audience__desc">
+            Supervisors and coordinators managing continuity, fittings, and returns
+            across a demanding production schedule.
+          </p>
+        </div>
+
+      </div>
+
+      <p class="audience__note reveal">
+        We work with productions and the professionals behind them — not with individual
+        clients, and we don't rent single pieces to the public.
+      </p>
+    </div>
+  </section>
 
 
   <!-- ══════════════════════════════════════════
@@ -380,12 +443,11 @@
         <div class="contact__accent-line reveal"></div>
         <p class="contact__note reveal">
           We work with a select number of productions each season to ensure every
-          client receives the full attention of our team. Reach out early — availability
-          fills quickly during awards season.
+          client receives the full attention of our team. 
         </p>
         <address class="contact__details reveal">
           <p>Nashville, Tennessee</p>
-          <p><a href="mailto:bookings@musiccitywardrobe.com">bookings@musiccitywardrobe.com</a></p>
+          <p><a href="mailto:musiccitywardrobe@gmail.com">musiccitywardrobe@gmail.com</a></p>
           <p>By appointment only</p>
         </address>
       </div>
@@ -400,13 +462,27 @@
         </div>
 
         <div class="form-group">
-          <label for="field-company" class="form-label">Production / Company</label>
-          <input type="text" id="field-company" name="company"
-                 class="form-input" placeholder="Production company or studio" required
-                 autocomplete="organization">
+          <label for="field-email" class="form-label">Email</label>
+          <input type="email" id="field-email" name="email"
+                 class="form-input" placeholder="you@example.com" required
+                 autocomplete="email">
         </div>
 
         <div class="form-group">
+          <label for="field-phone" class="form-label">Phone (Optional)</label>
+          <input type="tel" id="field-phone" name="phone"
+                 class="form-input" placeholder="(615) 555-0199"
+                 autocomplete="tel">
+        </div>
+
+        <div class="form-group">
+          <label for="field-company" class="form-label">Production / Company (Optional)</label>
+          <input type="text" id="field-company" name="company"
+                 class="form-input" placeholder="Production company or studio"
+                 autocomplete="organization">
+        </div>
+
+        <div class="form-group form-group--full">
           <label for="field-project-type" class="form-label">Project Type</label>
           <select id="field-project-type" name="project_type" class="form-input form-select" required>
             <option value="" disabled selected>Select type</option>
@@ -417,12 +493,6 @@
             <option value="red-carpet">Red Carpet / Events</option>
             <option value="other">Other</option>
           </select>
-        </div>
-
-        <div class="form-group">
-          <label for="field-date" class="form-label">Date Needed</label>
-          <input type="date" id="field-date" name="date_needed"
-                 class="form-input" required>
         </div>
 
         <div class="form-group form-group--full">
@@ -463,7 +533,7 @@
         <a href="#about">About</a>
         <a href="#collections">Collections</a>
         <a href="#process">Process</a>
-        <a href="#clients">Clients</a>
+        <a href="#who-we-serve">Who We Serve</a>
         <a href="#contact">Book</a>
       </nav>
 

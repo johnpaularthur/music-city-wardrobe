@@ -56,9 +56,9 @@ _Last updated: 2026-07-07_
       needs each company's permission — confirm before adding any logos.
 - [ ] **Testimonial quotes are still placeholders.** Need real quotes (with
       attribution/permission) or a decision to remove the testimonial cards.
-- [ ] **Contact email / domain.** `bookings@musiccitywardrobe.com` and the
-      `musiccitywardrobe.com` domain — confirm the domain is registered/desired
-      and the mailbox exists.
+- [ ] **Contact email.** Site now uses `musiccitywardrobe@gmail.com` — confirm
+      this mailbox is monitored. (If a branded `@musiccitywardrobe.com` address is
+      wanted later, that requires registering the domain.)
 - [ ] **"Est. 1998" / "over two decades."** Confirm the founding year and
       longevity claims are accurate for Fables by Barrie.
 - [ ] **Location.** Confirm "Nashville, Tennessee" is the correct public

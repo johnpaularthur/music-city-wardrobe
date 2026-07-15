@@ -122,6 +122,14 @@
         }
       });
 
+      // Email format check (field is required, so empty is already caught above)
+      var emailField = form.querySelector('#field-email');
+      if (emailField && emailField.value.trim() &&
+          !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailField.value.trim())) {
+        emailField.classList.add('form-input--error');
+        valid = false;
+      }
+
       if (!valid) {
         var firstError = form.querySelector('.form-input--error');
         if (firstError) firstError.focus();
@@ -137,8 +145,8 @@
       // Build FormData
       var data = new FormData(form);
 
-      // Formspree endpoint — replace YOUR_FORM_ID with your actual Formspree form ID
-      fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      // Formspree endpoint (form ID: mzdndrwn)
+      fetch('https://formspree.io/f/mzdndrwn', {
         method:  'POST',
         body:    data,
         headers: { 'Accept': 'application/json' }
@@ -175,7 +183,7 @@
     var msg = document.createElement('p');
     msg.className   = 'form-error-msg form-disclaimer';
     msg.style.color = getComputedStyle(document.documentElement).getPropertyValue('--color-gold').trim() || '#C9A96E';
-    msg.textContent = 'Something went wrong. Please email us directly at bookings@musiccitywardrobe.com';
+    msg.textContent = 'Something went wrong. Please email us directly at musiccitywardrobe@gmail.com';
     form.appendChild(msg);
   }
 

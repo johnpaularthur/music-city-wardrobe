@@ -173,6 +173,12 @@ address { font-style: normal; }
   flex-shrink: 0;
 }
 
+.nav-logo > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
 .nav-logo__wordmark {
   font-family: var(--font-display);
   font-size: 1.15rem;
@@ -247,8 +253,9 @@ address { font-style: normal; }
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 32px; height: 32px;
-  padding: 4px;
+  width: 44px; height: 44px;
+  padding: 10px;
+  margin-right: -10px; /* keep bars optically aligned to the container edge */
 }
 
 .nav-hamburger span {
@@ -267,7 +274,9 @@ address { font-style: normal; }
 .nav-mobile {
   position: fixed;
   top: var(--nav-height); left: 0;
-  width: 100%; height: calc(100vh - var(--nav-height));
+  width: 100%;
+  height: calc(100vh - var(--nav-height));
+  height: calc(100dvh - var(--nav-height));
   background: rgba(var(--bg-rgb), 0.98);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
@@ -276,6 +285,8 @@ address { font-style: normal; }
   justify-content: center;
   flex-direction: column;
   gap: var(--space-md);
+  padding: var(--space-md);
+  overflow-y: auto;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.35s ease;
@@ -287,6 +298,8 @@ address { font-style: normal; }
 }
 
 .nav-mobile__link {
+  display: block;
+  padding: 0.3rem 1rem;
   font-family: var(--font-display);
   font-size: clamp(2rem, 6vw, 3rem);
   font-weight: 300;
@@ -482,10 +495,7 @@ address { font-style: normal; }
 
 .about__img-placeholder {
   width: 100%; height: 100%;
-  background:
-    radial-gradient(ellipse at 30% 75%, var(--ph-1) 0%, transparent 55%),
-    radial-gradient(ellipse at 75% 25%, var(--ph-2) 0%, transparent 50%),
-    linear-gradient(180deg, var(--ph-base-a) 0%, var(--ph-base-b) 100%);
+  background: url('images/about.jpg') center / cover no-repeat;
 }
 
 .about__text { }
@@ -574,17 +584,11 @@ address { font-style: normal; }
 }
 
 .collection-card__img--stage {
-  background:
-    radial-gradient(ellipse at 40% 80%, var(--ph-1) 0%, transparent 60%),
-    radial-gradient(ellipse at 70% 20%, var(--ph-2) 0%, transparent 50%),
-    linear-gradient(150deg, var(--ph-base-a) 0%, var(--ph-base-b) 100%);
+  background: url('images/vintage.jpg') center 35% / cover no-repeat;
 }
 
 .collection-card__img--film {
-  background:
-    radial-gradient(ellipse at 30% 60%, var(--ph-2) 0%, transparent 60%),
-    radial-gradient(ellipse at 75% 30%, var(--ph-1) 0%, transparent 55%),
-    linear-gradient(150deg, var(--ph-base-b) 0%, var(--ph-base-a) 100%);
+  background: url('images/designer.jpg') center 25% / cover no-repeat;
 }
 
 .collection-card__img--editorial {
@@ -823,6 +827,66 @@ address { font-style: normal; }
 }
 
 /* ─────────────────────────────────────────────────────────────
+   AUDIENCE / WHO WE SERVE
+   ───────────────────────────────────────────────────────────── */
+.audience__header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.audience__heading {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  margin: 0.5rem 0;
+}
+
+.audience__lead {
+  max-width: 640px;
+  margin: 1.2rem auto 0;
+  font-size: 0.95rem;
+  color: rgba(var(--fg-rgb), 0.68);
+  line-height: 1.8;
+}
+
+.audience__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+  max-width: 900px;
+  margin: var(--space-lg) auto 0;
+}
+
+.audience__item {
+  padding: var(--space-sm) 0;
+  border-top: 1px solid rgba(var(--accent-rgb), 0.18);
+}
+
+.audience__name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--color-gold);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.audience__desc {
+  font-size: 0.83rem;
+  color: rgba(var(--fg-rgb), 0.68);
+  line-height: 1.8;
+}
+
+.audience__note {
+  text-align: center;
+  max-width: 620px;
+  margin: var(--space-lg) auto 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: rgba(var(--fg-rgb), 0.55);
+  line-height: 1.7;
+}
+
+/* ─────────────────────────────────────────────────────────────
    CONTACT / BOOKING
    ───────────────────────────────────────────────────────────── */
 .contact__layout {
@@ -1013,6 +1077,7 @@ address { font-style: normal; }
 
 .footer__nav {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-md);
 }
 
@@ -1082,6 +1147,7 @@ address { font-style: normal; }
 /* 960px — multi-column collapses */
 @media (max-width: 960px) {
   .testimonials__grid { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; }
+  .audience__grid { grid-template-columns: 1fr; max-width: 600px; }
   .contact__layout { grid-template-columns: 1fr; gap: var(--space-lg); }
   .contact__form { margin-top: 0; }
   .contact__note { max-width: 100%; }
@@ -1097,7 +1163,7 @@ address { font-style: normal; }
   .about__grid {
     grid-template-columns: 1fr;
   }
-  .about__visual { max-width: 400px; margin: 0 auto; }
+  .about__visual { width: 100%; max-width: 400px; margin: 0 auto; }
 
   .process__steps {
     grid-template-columns: 1fr;
@@ -1109,6 +1175,8 @@ address { font-style: normal; }
   .process-step__bg-num { font-size: 6rem; }
 
   .footer__inner { grid-template-columns: 1fr; text-align: center; }
+  .footer__nav { justify-content: center; gap: 0.5rem 1.25rem; }
+  .footer__nav a { padding: 0.4rem 0.25rem; }
   .footer__social { justify-content: center; }
   .footer__bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
@@ -1129,5 +1197,8 @@ address { font-style: normal; }
   :root { --space-xl: 4rem; --space-lg: 2.5rem; }
   .about__stat-row { gap: var(--space-md); }
   .about__stat-num { font-size: 2.2rem; }
+
+  .nav-logo__wordmark { font-size: 1rem; white-space: nowrap; }
+  .nav-logo__sub { font-size: 0.5rem; }
 }
 
