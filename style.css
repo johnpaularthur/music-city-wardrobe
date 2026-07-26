@@ -588,11 +588,11 @@ address { font-style: normal; }
 }
 
 .collection-card__img--film {
-  background: url('images/designer.jpg') center 25% / cover no-repeat;
+  background: url('images/designer.jpg') 68% center / cover no-repeat;
 }
 
 .collection-card__img--editorial {
-  background: url('images/contemporary.jpg') center 30% / cover no-repeat;
+  background: url('images/contemporary.jpg') 36% center / cover no-repeat;
 }
 
 .collection-card__img--redcarpet {
@@ -615,6 +615,11 @@ address { font-style: normal; }
 .collection-card__label {
   display: block;
   margin-bottom: 0.4rem;
+}
+
+/* Contemporary card: label overlaps the bright, lit ground — dark for contrast */
+.collection-card__img--editorial + .collection-card__body .collection-card__label {
+  color: var(--color-black);
 }
 
 .collection-card__title {
