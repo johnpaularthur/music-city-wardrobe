@@ -638,17 +638,6 @@ address { font-style: normal; }
   margin-bottom: 0.8rem;
 }
 
-.collection-card__arrow {
-  color: var(--color-gold);
-  font-size: 1.1rem;
-  display: inline-block;
-  transition: transform var(--transition-base);
-}
-
-.collection-card:hover .collection-card__arrow {
-  transform: translateX(6px);
-}
-
 /* ─────────────────────────────────────────────────────────────
    PROCESS (HOW IT WORKS)
    ───────────────────────────────────────────────────────────── */
