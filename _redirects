@@ -1,0 +1,8 @@
+# Netlify redirects.
+# Docs: https://docs.netlify.com/routing/redirects/
+
+# parked/ holds unapproved placeholder copy (invented testimonials, uncleared
+# client names). It lives in the repo for traceability but must never be
+# reachable on the public site — the publish directory is the repo root, so
+# without this rule it would be served at /parked/...
+/parked/*  /  404

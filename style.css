@@ -494,8 +494,10 @@ address { font-style: normal; }
 }
 
 .about__img-placeholder {
+  display: block;
   width: 100%; height: 100%;
-  background: url('images/about.jpg') center / cover no-repeat;
+  object-fit: cover;
+  object-position: center;
 }
 
 .about__text { }
@@ -575,7 +577,12 @@ address { font-style: normal; }
 }
 
 .collection-card__img {
+  display: block;
+  width: 100%;
+  height: auto;          /* override the width/height attr hints so
+                            aspect-ratio below governs the box */
   aspect-ratio: 4/5;
+  object-fit: cover;
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -584,19 +591,19 @@ address { font-style: normal; }
 }
 
 .collection-card__img--stage {
-  background: url('images/vintage.jpg') center 35% / cover no-repeat;
+  object-position: center 35%;
 }
 
 .collection-card__img--film {
-  background: url('images/designer.jpg') 68% center / cover no-repeat;
+  object-position: 68% center;
 }
 
 .collection-card__img--editorial {
-  background: url('images/contemporary.jpg') 36% center / cover no-repeat;
+  object-position: 36% center;
 }
 
 .collection-card__img--redcarpet {
-  background: url('images/western-wear.jpg') center / cover no-repeat;
+  object-position: center;
 }
 
 .collection-card__body {
@@ -1086,6 +1093,8 @@ address { font-style: normal; }
 
 .footer__nav a:hover { color: var(--color-gold); }
 
+/* Footer social icons: markup removed from index.html until real
+   Instagram/Pinterest accounts exist. Styles kept for when they return. */
 .footer__social {
   display: flex;
   gap: var(--space-sm);
