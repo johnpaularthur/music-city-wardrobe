@@ -1,8 +1,17 @@
 # Netlify redirects.
 # Docs: https://docs.netlify.com/routing/redirects/
+#
+# The publish directory is the repo root, so every committed file is served
+# unless a rule shadows it. Netlify matches static files BEFORE redirect
+# rules, so shadowing a file that actually exists requires the force flag
+# (the "!" after the status code). Without it these rules are silently
+# ignored and the file is served as normal.
 
-# parked/ holds unapproved placeholder copy (invented testimonials, uncleared
-# client names). It lives in the repo for traceability but must never be
-# reachable on the public site — the publish directory is the repo root, so
-# without this rule it would be served at /parked/...
-/parked/*  /  404
+# Unapproved placeholder copy: invented testimonials, uncleared client names.
+/parked/*             /  404!
+
+# Internal content-review page — not part of the public site.
+/review.html          /  404!
+
+# Internal sign-off notes for Barrie — not part of the public site.
+/NOTES-FOR-BARRIE.md  /  404!
